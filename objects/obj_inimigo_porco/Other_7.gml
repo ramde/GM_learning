@@ -6,7 +6,7 @@ if (sprite_index == spr_enemi_pig_damage){
 }
 
 if (sprite_index == spr_enemy_pig_dead)
-{
+{	
 	image_speed = 0;
 	image_index = 3;
 }
