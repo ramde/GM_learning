@@ -10,3 +10,10 @@ function jd_can_fall_validate(){
 		}
 	}
 }
+
+function jd_event_to_stop(){
+	if (vel_h != 0){
+		vel_h = 0;
+		sprite_index = spr_enemy_pig_idle;
+	}
+}

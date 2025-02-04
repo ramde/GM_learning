@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-//Colisão
+#region Colisão Horizontal
 var _colh = instance_place(x + vel_h, y, obj_grama);
 if(_colh){
 	
@@ -18,9 +18,10 @@ if(_colh){
 	vel_h = 0
 }
 x += vel_h;
+#endregion
 
 
-//Vertical 
+#region Colisão vertial
 var _colv = instance_place(x, y + vel_v, obj_grama);
 
 if (_colv) {
@@ -37,3 +38,4 @@ if (_colv) {
 }
 
 y += vel_v;
+#endregion

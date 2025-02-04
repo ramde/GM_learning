@@ -11,6 +11,11 @@ dano = false;
 tempo_dano = game_get_speed(gamespeed_fps);
 timer_dano = 0;
 
+//Invencivel
+invencivel_tempo = game_get_speed(gamespeed_fps) * 3;
+invencivel_timer = 0;
+
+
 inputs = {
 	left : ord("A"),
 	right : ord("D"),
