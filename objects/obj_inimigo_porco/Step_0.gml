@@ -5,26 +5,30 @@
 event_inherited();
 #region //funções do porco
 
-function jd_acender_bomba(_bomba = instance_place(x,y, obj_bomba)){
+function jd_ativar_bomba()
+{
 	
-	if(_bomba && _bomba.momento_bomba == "off"){
-		
-		jd_stop_movement();
-		//Habilitando animação para riscar o fosforo
-		sprite_index = spr_porco_fosforo_acender;
-		image_index = 0;
-	}
-	
-	if(image_index >= image_number - 1 && sprite_index == spr_porco_fosforo_acender){		
-		
-		var _bomba2= instance_place(x, y, obj_bomba);
-		if(_bomba2)
-			_bomba.momento_bomba = "on";
-		
-		image_index = 0;
-		
-	}	
 }
+
+function jd_ativar_canhao()
+{
+	
+}
+
+function jd_acender(_obj)
+{
+	switch(_obj){
+		case "bomba":
+			jd_ativar_bomba();
+			break;
+		case "canhao":
+			jd_ativar_canhao();
+			break;
+		default:
+	}
+}
+
+
 #endregion
 
 
@@ -50,17 +54,26 @@ if(sprite_index == spr_porco_fosforo_on){
 			image_index = 0;
 	}
 }
-else if(sprite_index == spr_porco_fosforo_acender){
-		if (image_index >= image_number -1){
-			var _bomba = instance_place(x,y, obj_bomba);
+else if(sprite_index == spr_porco_fosforo_acender){		
+		
+		if (jd_frame_finalizado()){
+			
+			var _bomba = instance_place(x,y, obj_bomba);		
 			if (_bomba){
-				_bomba.momento_bomba = "on";
-				sprite_index = spr_enemy_pig_idle;
+				_bomba.momento_bomba = "on";			
+				jd_mudar_sprite(spr_enemy_pig_idle);
+			}
+			
+			var _canhao = instance_place(x, y, obj_canhao);
+			if(_canhao){
+				_canhao.sprite_index = spr_canhao_on;				
+				jd_mudar_sprite(spr_enemy_pig_idle);
 			}
 		}
 }
 else
 {
+	//Checando se colidiu com uma bomba
 	var _bomba = instance_place(x, y, obj_bomba);
 	if(_bomba)
 	{		
@@ -69,6 +82,17 @@ else
 			sprite_index = spr_porco_fosforo_on;
 			image_index = 0;
 		}		
+		jd_stop_movement();
+	}
+	
+	//Checando se colidiu com um canhão
+	var _canhao = instance_place(x,y, obj_canhao);
+	if(_canhao)
+	{		
+		if(_canhao.sprite_index == spr_canhao_idle){
+			sprite_index = spr_porco_fosforo_on;
+			image_index = 0;
+		}
 		jd_stop_movement();
 	}
 	
@@ -107,5 +131,5 @@ else
 
 //Colocando sprite de dado no Inimigo;
 if(damage){
-	sprite_index = spr_enemi_pig_damage;
+	sprite_index = spr_enemy_pig_damage;
 }

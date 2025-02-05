@@ -1,6 +1,6 @@
 //End the enemy after Damage
 
-if (sprite_index == spr_enemi_pig_damage){
+if (sprite_index == spr_enemy_pig_damage){
 	sprite_index = spr_enemy_pig_dead;
 	vel_h = 0;
 }
