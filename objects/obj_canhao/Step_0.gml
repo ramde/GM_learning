@@ -3,7 +3,7 @@ switch(sprite_index)
 {
 	case spr_canhao_on:		
 		if(image_index >= 1.5 && canhao_carregado){
-			var _bola = instance_create_layer(x  + (5 * image_xscale), y -11, "inimigo_etc", obj_bala_canhao);
+			var _bola = instance_create_layer(x  + (5 * image_xscale), y -11, "projeteis", obj_bala_canhao);
 			_bola.vel_h = choose(3, 4, 7) * image_xscale;			
 			_bola.vel_v = choose(-3,-2, -1);
 			canhao_carregado = false;

@@ -13,3 +13,11 @@ if abs(vel_h) <= 0.1 {
 	instance_create_layer(x, y + sprite_height / 2 , layer, obj_bomba);	
 	instance_destroy();
 }
+
+//Se o tiro acertar, dar dano no inimigo
+var _player = instance_place(x,y, obj_Player);
+	if(_player){
+		with (_player) {
+			jd_player_set_damage();
+	}
+}
