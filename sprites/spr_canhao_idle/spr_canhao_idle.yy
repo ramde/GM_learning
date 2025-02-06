@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_canhao_idle",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":17,
   "bbox_left":0,
-  "bbox_right":23,
+  "bbox_right":1,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

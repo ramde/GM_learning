@@ -27,8 +27,6 @@ function jd_acender(_obj)
 		default:
 	}
 }
-
-
 #endregion
 
 
@@ -68,31 +66,27 @@ else if(sprite_index == spr_porco_fosforo_acender){
 			if(_canhao){
 				_canhao.sprite_index = spr_canhao_on;				
 				jd_mudar_sprite(spr_enemy_pig_idle);
+				_canhao.status_canhao = "espere";
 			}
 		}
 }
 else
 {
-	//Checando se colidiu com uma bomba
+	//Checando se colidiu com uma bomba e se SIM, ativa a bomba
 	var _bomba = instance_place(x, y, obj_bomba);
-	if(_bomba)
-	{		
-		if(_bomba && _bomba.momento_bomba == "off"){
-			//Habilitando animação para riscar o fosforo
-			sprite_index = spr_porco_fosforo_on;
-			image_index = 0;
-		}		
+	if(_bomba && _bomba.momento_bomba == "off")
+	{			
+		sprite_index = spr_porco_fosforo_on;
+		image_index = 0;		
 		jd_stop_movement();
 	}
 	
-	//Checando se colidiu com um canhão
+	//Checando se colidiu com uma bomba e se SIM, ativa a canhão
 	var _canhao = instance_place(x,y, obj_canhao);
-	if(_canhao)
-	{		
-		if(_canhao.sprite_index == spr_canhao_idle){
-			sprite_index = spr_porco_fosforo_on;
-			image_index = 0;
-		}
+	if(_canhao && _canhao.status_canhao != "espere" && _canhao.sprite_index == spr_canhao_idle)
+	{			
+		sprite_index = spr_porco_fosforo_on;
+		image_index = 0;		
 		jd_stop_movement();
 	}
 	
