@@ -21,3 +21,9 @@ var _player = instance_place(x,y, obj_Player);
 			jd_player_set_damage();
 	}
 }
+
+var _bomba = instance_place(x,y, obj_bomba);
+if(_bomba && _bomba.momento_bomba == "off")
+{			
+	_bomba.momento_bomba = "on";
+}

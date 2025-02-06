@@ -20,6 +20,11 @@ var jd_explosao_bomba = function(){
 	if(sprite_index == spr_bomba_on){
 		sprite_index = spr_bomba_boom;
 		image_index = 0;
+		
+		var _bomba = instance_place(x, y, obj_bomba);
+		if (_bomba && _bomba.momento_bomba == "off"){
+			_bomba.boom_tempo = "on";		
+		}
 	}
 	
 	//Destruindo Sprint após explosão
