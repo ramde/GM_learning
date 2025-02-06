@@ -6,8 +6,11 @@ function jd_stop_movement(){
 	vel_h = 0;
 }
 
-function jd_apply_gravity(){
-	vel_v += grav;
+function jd_apply_gravity(grav_nao_padrao = 0){
+	
+	if grav_nao_padrao != 0	
+		vel_v += grav_nao_padrao;
+	else vel_v += grav;	
 }
 
 function jd_frame_finalizado(){
