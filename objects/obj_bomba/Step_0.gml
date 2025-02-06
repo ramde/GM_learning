@@ -7,9 +7,8 @@ jd_apply_gravity();
 var jd_armando_bomba = function(){
 	sprite_index = spr_bomba_on;
 	
-	if(boom_tempo > 0){
-		boom_tempo--;
-	}
+	if(boom_tempo > 0)
+		boom_tempo--;	
 	else
 		momento_bomba = "boom";
 }
@@ -19,17 +18,18 @@ var jd_explosao_bomba = function(){
 	//checando se a chamada veio após bomba armada
 	if(sprite_index == spr_bomba_on){
 		sprite_index = spr_bomba_boom;
-		image_index = 0;
+		image_index = 0;		
 		
-		var _bomba = instance_place(x, y, obj_bomba);
-		if (_bomba && _bomba.momento_bomba == "off"){
-			_bomba.boom_tempo = "on";		
-		}
 	}
 	
 	//Destruindo Sprint após explosão
-	if(image_index >= image_number -1){
-		instance_destroy();
+	if(image_index >= image_number -1){		
+		var _bomba = instance_place(x, y, obj_bomba);
+		if (_bomba && _bomba.momento_bomba == "off"){
+			show_debug_message("entreou");
+			_bomba.momento_bomba = "on";		
+		}
+		instance_destroy();		
 	}
 	
 	var _player = instance_place(x,y, obj_Player);
