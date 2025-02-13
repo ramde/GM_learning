@@ -10,8 +10,8 @@
   "name":"obj_inimigo_porco",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Inimigo",
+    "path":"folders/Objects/Actors/Inimigo.yy",
   },
   "parentObjectId":{
     "name":"obj_main_enemy",

@@ -9,12 +9,12 @@
   "name":"obj_bala_canhao",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Etc",
+    "path":"folders/Particle Systems/Etc.yy",
   },
   "parentObjectId":{
-    "name":"obj_entidade_game",
-    "path":"objects/obj_entidade_game/obj_entidade_game.yy",
+    "name":"obj_atores",
+    "path":"objects/obj_atores/obj_atores.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

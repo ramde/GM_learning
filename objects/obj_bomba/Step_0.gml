@@ -3,6 +3,10 @@ event_inherited();
 
 jd_apply_gravity();
 
+if(place_meeting(x, y + 1, obj_grama) && vel_h != 0)
+	vel_h *= .92;
+else vel_h *= .995;
+
 #region Armando e explodindo a bomba
 var jd_armando_bomba = function(){
 	sprite_index = spr_bomba_on;
@@ -19,7 +23,6 @@ var jd_explosao_bomba = function(){
 	if(sprite_index == spr_bomba_on){
 		sprite_index = spr_bomba_boom;
 		image_index = 0;		
-		
 	}
 	
 	//Destruindo Sprint após explosão

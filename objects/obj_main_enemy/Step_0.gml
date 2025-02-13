@@ -17,3 +17,21 @@ function jd_event_to_stop(){
 		sprite_index = spr_enemy_pig_idle;
 	}
 }
+
+function jd_exterminando_inimigo(_sprite_corrente) 
+{
+	var _inimido_exterminado = false;
+	//Removendo o inimigo do Level após morte
+	if (_sprite_corrente == spr_enemy_pig_dead)
+	{
+		if(image_speed <= 0)
+			image_alpha -= 0.01;
+	
+		if(image_alpha <= 0)
+			instance_destroy();	
+	
+		_inimido_exterminado = true;
+	}
+	
+	return _inimido_exterminado
+}

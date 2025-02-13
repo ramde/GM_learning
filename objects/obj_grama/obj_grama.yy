@@ -6,8 +6,8 @@
   "name":"obj_grama",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Colisores",
+    "path":"folders/Objects/Colisores.yy",
   },
   "parentObjectId":null,
   "persistent":false,

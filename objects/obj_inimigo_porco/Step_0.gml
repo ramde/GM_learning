@@ -29,19 +29,9 @@ function jd_acender(_obj)
 }
 #endregion
 
-
 //Removendo o inimigo do Level após morte
-if (sprite_index == spr_enemy_pig_dead)
-{
-	if(image_speed <= 0)
-		image_alpha -= 0.01;
-	
-	if(image_alpha <= 0)
-		instance_destroy();	
-	
-	exit;	
-}
-
+if jd_exterminando_inimigo(sprite_index)
+	exit;
 
 var _chao = place_meeting(x, y + 1, obj_grama);
 
@@ -72,13 +62,23 @@ else if(sprite_index == spr_porco_fosforo_acender){
 }
 else
 {
-	//Checando se colidiu com uma bomba e se SIM, ativa a bomba
+	//Decide se pega ou acende a bomba
+	var _pega_bomba = choose(true, false);
+	//Checando se colidiu com uma bomba e se SIM, ativa ou pega bomba
 	var _bomba = instance_place(x, y, obj_bomba);
 	if(_bomba && _bomba.momento_bomba == "off")
 	{			
-		sprite_index = spr_porco_fosforo_on;
-		image_index = 0;		
-		jd_stop_movement();
+		if(!_pega_bomba){
+			sprite_index = spr_porco_fosforo_on;
+			image_index = 0;		
+			jd_stop_movement();
+		}
+		else{
+			instance_destroy(_bomba);
+			var _novo_porco_bomba = instance_create_layer(x, y, layer, obj_inimigo_porco_bomba);
+			_novo_porco_bomba.sprite_index = spr_porco_bomba_pega;
+			instance_destroy();
+		}
 	}
 	
 	//Checando se colidiu com uma bomba e se SIM, ativa a canhão
@@ -103,9 +103,7 @@ else
 				sprite_index = spr_enemy_pig_run;
 				image_xscale = vel_h;
 			}
-			else jd_event_to_stop();			
-		
-		
+			else jd_event_to_stop();
 		
 			time_to_decide_walk = game_get_speed(gamespeed_fps);// room_speed * 2;		
 		}
@@ -124,6 +122,6 @@ else
 } 
 
 //Colocando sprite de dado no Inimigo;
-if(damage){
-	sprite_index = spr_enemy_pig_damage;
-}
+//if(damage){
+//	sprite_index = spr_enemy_pig_damage;
+//}

@@ -17,6 +17,7 @@ dano = false;
 		{
 			vel_v = -vel_jump;
 			_enemy.damage = true;
+			_enemy.jd_mudar_sprite(spr_enemy_pig_damage);
 		}
 	}
 }
