@@ -9,8 +9,8 @@
   "name":"obj_canhao",
   "overriddenProperties":[],
   "parent":{
-    "name":"Etc",
-    "path":"folders/Particle Systems/Etc.yy",
+    "name":"Cano",
+    "path":"folders/Objects/Etc/Cano.yy",
   },
   "parentObjectId":null,
   "persistent":false,

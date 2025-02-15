@@ -9,8 +9,8 @@
   "name":"obj_bomba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Etc",
-    "path":"folders/Particle Systems/Etc.yy",
+    "name":"Bomb",
+    "path":"folders/Objects/Etc/Bomb.yy",
   },
   "parentObjectId":{
     "name":"obj_atores",

@@ -1,21 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bala_canhao",
+  "%Name":"obj_door",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bala_canhao",
+  "name":"obj_door",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cano",
-    "path":"folders/Objects/Etc/Cano.yy",
+    "name":"Doors",
+    "path":"folders/Objects/Etc/Doors.yy",
   },
-  "parentObjectId":{
-    "name":"obj_atores",
-    "path":"objects/obj_atores/obj_atores.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -34,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_canha_ball",
-    "path":"sprites/spr_canha_ball/spr_canha_ball.yy",
+    "name":"spr_door_idle",
+    "path":"sprites/spr_door_idle/spr_door_idle.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_door_idle",
+    "path":"sprites/spr_door_idle/spr_door_idle.yy",
+  },
   "visible":true,
 }
