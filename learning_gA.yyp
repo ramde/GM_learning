@@ -62,8 +62,11 @@
     {"id":{"name":"obj_inimigo_porco","path":"objects/obj_inimigo_porco/obj_inimigo_porco.yy",},},
     {"id":{"name":"obj_main_enemy","path":"objects/obj_main_enemy/obj_main_enemy.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rm_level_001","path":"rooms/rm_level_001/rm_level_001.yy",},},
+    {"id":{"name":"rm_level_002","path":"rooms/rm_level_002/rm_level_002.yy",},},
+    {"id":{"name":"rm_model","path":"rooms/rm_model/rm_model.yy",},},
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},
+    {"id":{"name":"sq_transiction_in_Events3","path":"scripts/sq_transiction_in_Events3/sq_transiction_in_Events3.yy",},},
     {"id":{"name":"sq_transiction_out_Events2","path":"scripts/sq_transiction_out_Events2/sq_transiction_out_Events2.yy",},},
     {"id":{"name":"sq_transiction_in","path":"sequences/sq_transiction_in/sq_transiction_in.yy",},},
     {"id":{"name":"sq_transiction_out","path":"sequences/sq_transiction_out/sq_transiction_out.yy",},},
@@ -103,7 +106,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_level_001","path":"rooms/rm_level_001/rm_level_001.yy",},},
+    {"roomId":{"name":"rm_level_002","path":"rooms/rm_level_002/rm_level_002.yy",},},
+    {"roomId":{"name":"rm_model","path":"rooms/rm_model/rm_model.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
