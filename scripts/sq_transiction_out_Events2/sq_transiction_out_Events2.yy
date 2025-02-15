@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sq_transiction_out_Events2",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sq_transiction_out_Events2",
+  "parent":{
+    "name":"learning_gA",
+    "path":"learning_gA.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

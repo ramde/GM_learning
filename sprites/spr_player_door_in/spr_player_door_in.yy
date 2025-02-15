@@ -66,7 +66,7 @@
     },
     "name":"spr_player_door_in",
     "playback":1,
-    "playbackSpeed":5.0,
+    "playbackSpeed":4.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
