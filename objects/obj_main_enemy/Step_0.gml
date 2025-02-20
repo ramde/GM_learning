@@ -35,3 +35,11 @@ function jd_exterminando_inimigo(_sprite_corrente)
 	
 	return _inimido_exterminado
 }
+
+function jd_set_damage_on_player(){
+
+var _player = instance_place(x,y, obj_player);
+	if(_player && _player.perde_pv){		
+		_player.jd_player_set_damage();
+	}
+}

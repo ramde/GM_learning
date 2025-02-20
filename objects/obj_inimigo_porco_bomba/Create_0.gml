@@ -20,7 +20,7 @@ jd_timer_porco_bomba_encerrado = function(_nova_sprint){
 
 jd_ver_o_player = function()
 {
-	var _vi_player = collision_line(x, y -14, x + visao, y - 14, obj_Player, false, true);
+	var _vi_player = collision_line(x, y -14, x + visao, y - 14, obj_player, false, true);
 	if (_vi_player){
 		jd_mudar_sprite(spr_porco_bomba_joga);
 	}

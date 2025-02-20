@@ -12,6 +12,14 @@ switch (sprite_index)
 		jd_get_out_door();
 	break;
 	
+	case spr_player_dead:
+		if (image_index > image_number -1)
+		{
+			image_speed = 0;
+			image_index = image_number - 1;
+		}
+	break;
+	
 	default:
 		jd_player_default_actions();
 }

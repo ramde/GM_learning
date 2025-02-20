@@ -6,7 +6,7 @@ event_inherited();
 
 //Players' Skills
 vel_jump = 8;
-
+perde_pv = true;
 dano = false;
 tempo_dano = game_get_speed(gamespeed_fps);
 timer_dano = 0;
@@ -40,10 +40,22 @@ dano = false;
 	}
 }
 
-jd_player_set_damage = function (){
+jd_kill_player = function(){	
+	jd_g_mudar_sprite(spr_player_dead);	
+}
+jd_player_set_damage = function (){		
+	
 	dano = true;
 	timer_dano = tempo_dano;
-	invencivel_timer = invencivel_tempo;
+	invencivel_timer = invencivel_tempo;	
+	
+	if perde_pv
+		global.pv--;
+	
+	perde_pv = false;
+	
+	if global.pv == 0
+		jd_kill_player();
 }
 
 jd_get_in_door = function()
@@ -120,8 +132,8 @@ jd_player_default_actions = function()
 			}
 	}
 
-	if (dano){
-		sprite_index = spr_player_hit;	
+	if (dano && sprite_index != spr_player_dead){
+		jd_g_mudar_sprite(spr_player_hit);		
 	}
 
 	//Limitando o tempo de animão do dano
@@ -133,16 +145,16 @@ jd_player_default_actions = function()
 		invencivel_timer--;
 		image_alpha = 0.5;	
 	}
-	else 
+	else {
 		image_alpha = 1;
+		perde_pv = true;
+	}
 
 	//Tomando dano do inimigo
 	var _inimigo = instance_place(x, y, obj_main_enemy);
 	if (_inimigo && invencivel_timer <= 0){		
 		if(_inimigo.sprite_index != spr_enemy_pig_dead && _inimigo.damage == false){
-			dano = true;
-			timer_dano = tempo_dano;
-			invencivel_timer = invencivel_tempo;
+			jd_player_set_damage();
 		}
 	}
 }

@@ -15,11 +15,10 @@ if abs(vel_h) <= 0.1 {
 }
 
 //Se o tiro acertar, dar dano no inimigo
-var _player = instance_place(x, y, obj_Player);
-	if(_player){
-		with (_player) {
-			jd_player_set_damage();
-	}
+//jd_set_damage_on_player();
+var _player = instance_place(x, y, obj_player);
+if(_player && _player.perde_pv){
+	_player.jd_player_set_damage()
 }
 
 var _bomba = instance_place(x, y, obj_bomba);

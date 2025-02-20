@@ -35,7 +35,7 @@ var jd_explosao_bomba = function(){
 		instance_destroy();		
 	}
 	
-	var _player = instance_place(x,y, obj_Player);
+	var _player = instance_place(x,y, obj_player);
 	if(_player){
 		with (_player) {
 			jd_player_set_damage();
