@@ -5,7 +5,7 @@ switch (sprite_index)
 {
 	case spr_door_idle:
 		var _player = instance_place(x, y, obj_player);
-		if (_player && keyboard_check(ord("W"))){						
+		if (_player && keyboard_check(ord("W")) && door_out ){						
 			jd_g_mudar_sprite(spr_door_opening);
 			_player.sprite_index = spr_player_door_in;
 		}

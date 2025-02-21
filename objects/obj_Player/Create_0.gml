@@ -15,6 +15,18 @@ timer_dano = 0;
 invencivel_tempo = game_get_speed(gamespeed_fps) * 3;
 invencivel_timer = 0;
 
+//Timer para reiniciar o Game depois de morrer
+restart_timer = game_get_speed(gamespeed_fps) * 3;
+
+
+jd_start_countdown_to_restart_game = function(){
+	restart_timer--;
+	if restart_timer <= 0 {
+		global.pv = global.max_pv;
+		game_restart();
+	}
+}
+
 
 inputs = {
 	left : ord("A"),
@@ -28,16 +40,17 @@ jd_g_mudar_sprite(spr_player_door_out);
 #region habilidades do Player
 jd_jump_kill_enemy = function (_enemy = instance_place(x, y -1, obj_main_enemy)){
 dano = false;
+perde_pv = false;
 	if (_enemy)
 	{
-		dano = false;
 		if (_enemy.sprite_index != spr_enemy_pig_dead)
 		{
 			vel_v = -vel_jump;
 			_enemy.damage = true;
-			_enemy.jd_mudar_sprite(spr_enemy_pig_damage);
+			_enemy.jd_mudar_sprite(spr_enemy_pig_damage);			
 		}
 	}
+	perde_pv = true;
 }
 
 jd_kill_player = function(){	
@@ -45,7 +58,7 @@ jd_kill_player = function(){
 }
 jd_player_set_damage = function (){		
 	
-	dano = true;
+	dano = true;	
 	timer_dano = tempo_dano;
 	invencivel_timer = invencivel_tempo;	
 	
@@ -120,10 +133,9 @@ jd_player_default_actions = function()
 	else { 
 		//player no ar
 			if (vel_v < 0)
-				sprite_index = spr_player_jump;		
+				jd_g_mudar_sprite(spr_player_jump);		
 			else {
-				sprite_index = spr_player_fall;			
-				//to kill enemy			
+				jd_g_mudar_sprite(spr_player_fall);		
 				jd_jump_kill_enemy(instance_place(x, y -1, obj_main_enemy));
 			}		
 		
@@ -138,7 +150,11 @@ jd_player_default_actions = function()
 
 	//Limitando o tempo de animão do dano
 	if(timer_dano > 0)
-		timer_dano--;	
+		timer_dano--;
+		
+	if (sprite_index == spr_player_hit && image_index <= image_number -1 && timer_dano == 0)
+		image_speed = 0;		
+	
 
 	//controlando a invencibilidade
 	if (invencivel_timer > 0){
@@ -153,7 +169,7 @@ jd_player_default_actions = function()
 	//Tomando dano do inimigo
 	var _inimigo = instance_place(x, y, obj_main_enemy);
 	if (_inimigo && invencivel_timer <= 0){		
-		if(_inimigo.sprite_index != spr_enemy_pig_dead && _inimigo.damage == false){
+		if(_inimigo.sprite_index != spr_enemy_pig_dead && !_inimigo.damage){
 			jd_player_set_damage();
 		}
 	}

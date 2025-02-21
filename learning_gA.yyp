@@ -23,6 +23,7 @@
     {"$GMFolder":"","%Name":"Bomb","folderPath":"folders/Objects/Etc/Bomb.yy","name":"Bomb","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Cano","folderPath":"folders/Objects/Etc/Cano.yy","name":"Cano","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Doors","folderPath":"folders/Objects/Etc/Doors.yy","name":"Doors","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Heart","folderPath":"folders/Objects/Etc/Heart.yy","name":"Heart","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},

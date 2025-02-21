@@ -13,11 +13,13 @@ switch (sprite_index)
 	break;
 	
 	case spr_player_dead:
+		jd_start_countdown_to_restart_game();
+		
 		if (image_index > image_number -1)
 		{
 			image_speed = 0;
 			image_index = image_number - 1;
-		}
+		}		
 	break;
 	
 	default:
